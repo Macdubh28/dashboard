@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aurelius Secundus — Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<script src="config-loader.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--noir:#0D0D0D;--gris:#242424;--gris2:#2E2E2E;--bronze:#C9933A;--bronze2:#A67C2E;--bronze3:#7A5A1E;--blanc:#F5F0E8;--blanc2:#C8C0B0}
@@ -107,7 +108,7 @@ tbody td:first-child{color:var(--blanc);font-family:'Cinzel',serif;font-size:11p
 .tc{display:none}.tc.active{display:block}
 </style>
 </head>
-<body>
+<body data-platform="dashboard">
 <div class="hdr">
   <div><div class="lt">AURELIUS SECUNDUS</div><div class="ls">Architecture · Document de Commandement · 2026</div></div>
   <div class="tabs">
@@ -187,7 +188,7 @@ tbody td:first-child{color:var(--blanc);font-family:'Cinzel',serif;font-size:11p
   <div class="mc"><div class="mch"><div class="mct">HEGEMONIKON Premium</div><div class="mcr">04</div></div><div class="mcb"><div><div class="mk">Statut</div><span class="bdg bd">Long terme</span></div><div><div class="mk">Concept</div><div class="mv">PWA premium · Sync cloud</div></div><div><div class="mk">Potentiel</div><div class="mv">Abonnement mensuel · Recurrent</div></div><div><div class="mk">Prerequis</div><div class="mv">PWA complete + base utilisateurs</div></div></div></div>
 </div>
 </div>
-<div class="qt"><div class="qtx">"Tu as du pouvoir sur ton esprit, pas sur les evenements exterieurs."</div><div class="qta">Marc Aurele · Pensees</div></div>
+<div class="qt"><div class="qtx" data-config="quote-text">"Tu as du pouvoir sur ton esprit, pas sur les evenements exterieurs."</div><div class="qta" data-config="quote-author">Marc Aurele · Pensees</div></div>
 <div class="ftr"><div class="ft">Macdubh · Aurelius Secundus · @AigleRoyal28</div><div class="ft">Document de Commandement · Mars 2026</div><div class="ft">Dashboard V2</div></div>
 <script>
 const DB=[
