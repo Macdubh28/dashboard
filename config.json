@@ -1,0 +1,108 @@
+{
+  "version": "1.2.0",
+  "lastUpdated": "2026-03-28",
+  "author": "Aurelius Secundus",
+  "handle": "@AigleRoyal28",
+  "global": {
+    "quoteOfDay": {
+      "text": "Tu as du pouvoir sur ton esprit, pas sur les événements extérieurs. Prends-en conscience et tu trouveras la force.",
+      "author": "Marc Aurèle",
+      "source": "Pensées"
+    },
+    "philosophy": "Morale de Ghost",
+    "pillars": [
+      "L'Aigle",
+      "Macdubh",
+      "Stoïcisme"
+    ]
+  },
+  "platforms": {
+    "hegemonikon": {
+      "title": "HEGEMONIKON",
+      "tagline": "La Citadelle Intérieure — Discipline Stoïcienne",
+      "url": "https://macdubh28.github.io/HEGEMONIKON/",
+      "repo": "https://github.com/Macdubh28/hegemonikon",
+      "status": "active",
+      "maintenanceMode": false,
+      "maintenanceMessage": "",
+      "nav": [
+        {
+          "label": "Accueil",
+          "href": "index.html"
+        },
+        {
+          "label": "Matin",
+          "href": "matin.html"
+        },
+        {
+          "label": "Journal",
+          "href": "journal.html"
+        },
+        {
+          "label": "Progrès",
+          "href": "progres.html"
+        },
+        {
+          "label": "Archive",
+          "href": "archive.html"
+        }
+      ],
+      "color": "#C9A84C",
+      "icon": "🏛️"
+    },
+    "marc-aurele": {
+      "title": "Aurelius Secundus",
+      "tagline": "La voie du philosophe-guerrier",
+      "url": "https://macdubh28.github.io/marc-aurele/",
+      "repo": "https://github.com/Macdubh28/marc-aurele",
+      "status": "active",
+      "maintenanceMode": false,
+      "maintenanceMessage": "",
+      "nav": [
+        {
+          "label": "Accueil",
+          "href": "index.html"
+        },
+        {
+          "label": "Marc Aurèle",
+          "href": "marc-aurele.html"
+        },
+        {
+          "label": "Épictète",
+          "href": "epictete.html"
+        },
+        {
+          "label": "Sénèque",
+          "href": "seneque.html"
+        },
+        {
+          "label": "Exercices",
+          "href": "exercices.html"
+        },
+        {
+          "label": "Morale de Ghost",
+          "href": "morale-ghost.html"
+        }
+      ],
+      "color": "#8B6914",
+      "icon": "📜"
+    },
+    "dashboard": {
+      "title": "GHOST-2 Dashboard",
+      "tagline": "Hub de Commandement — Aurelius Secundus",
+      "url": "https://macdubh28.github.io/dashboard/",
+      "repo": "https://github.com/Macdubh28/dashboard",
+      "status": "active",
+      "maintenanceMode": false,
+      "maintenanceMessage": "",
+      "nav": [
+        {
+          "label": "Hub",
+          "href": "index.html"
+        }
+      ],
+      "color": "#F5F0E8",
+      "icon": "⚡"
+    }
+  }
+}
