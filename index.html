@@ -4,12 +4,208 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aurelius Secundus — Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--noir:#0D0D0D;--gris:#242424;--gris2:#2E2E2E;--bronze:#C9933A;--bronze2:#A67C2E;--bronze3:#7A5A1E;--blanc:#F5F0E8;--blanc2:#C8C0B0}
+html,body{min-height:100vh;background:var(--noir);color:var(--blanc);font-family:'Crimson Text',Georgia,serif}
+.hdr{background:#0D0D0D;border-bottom:1px solid var(--bronze3);padding:20px 28px 16px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.lt{font-family:'Cinzel',serif;font-size:20px;font-weight:700;color:var(--bronze);letter-spacing:.12em}
+.ls{font-family:'Cinzel',serif;font-size:9px;color:var(--bronze2);letter-spacing:.2em;text-transform:uppercase;margin-top:3px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tab{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.12em;color:var(--blanc2);background:none;border:1px solid transparent;padding:7px 14px;cursor:pointer;transition:all .2s;text-transform:uppercase}
+.tab:hover{color:var(--bronze);border-color:var(--bronze3)}.tab.active{color:var(--bronze);border-color:var(--bronze);background:rgba(201,147,58,.08)}
+.main{padding:20px 24px}
+.st{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.18em;color:var(--bronze2);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.st::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--bronze3),transparent)}
+.card{background:var(--gris);border:1px solid var(--gris2);padding:14px;cursor:pointer;transition:all .25s;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--bronze3);transition:background .25s}
+.card:hover{border-color:var(--bronze2)}.card:hover::before,.card.active::before{background:var(--bronze)}
+.card.active{border-color:var(--bronze);background:rgba(201,147,58,.08)}
+.cn{font-family:'Cinzel',serif;font-size:12px;font-weight:600;color:var(--bronze);letter-spacing:.06em}
+.cu{font-size:10px;color:var(--bronze2);font-style:italic;margin:5px 0 9px;word-break:break-all}
+.ch{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}
+.items{list-style:none;display:flex;flex-direction:column;gap:3px}
+.items li{font-size:11px;color:var(--blanc2);display:flex;gap:6px;line-height:1.4}
+.items li::before{content:'·';color:var(--bronze2);flex-shrink:0}
+.bdg{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.1em;padding:2px 7px;text-transform:uppercase}
+.ba{color:#4CAF82;border:1px solid rgba(42,122,74,.4)}.bc{color:var(--bronze);border:1px solid var(--bronze3)}
+.bd{color:var(--blanc2);border:1px solid var(--gris2)}.bp{color:#E85D24;border:1px solid rgba(232,93,36,.4)}
+.det{margin-top:16px;background:var(--gris);border:1px solid var(--bronze3);padding:18px;display:none;animation:fi .3s ease}
+.det.visible{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.dtit{font-family:'Cinzel',serif;font-size:13px;font-weight:600;color:var(--bronze);margin-bottom:12px;letter-spacing:.06em}
+.dgr{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.dlb{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.15em;color:var(--bronze2);text-transform:uppercase;margin-bottom:5px}
+.dv{font-size:12px;color:var(--blanc);line-height:1.6}
+.dtg{display:inline-block;font-size:10px;color:var(--bronze2);border:1px solid var(--bronze3);padding:2px 7px;margin:2px 2px 2px 0;font-family:'Cinzel',serif}
+.tod{display:flex;gap:8px;font-size:11px;color:var(--blanc2);padding:5px 0;border-bottom:1px solid rgba(201,147,58,.1);align-items:flex-start}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--bronze3);flex-shrink:0;margin-top:3px}
+.dot.h{background:var(--bronze)}.dot.u{background:#E85D24}
+.idb{background:linear-gradient(135deg,rgba(201,147,58,.12),rgba(201,147,58,.04));border:1px solid var(--bronze);padding:16px 20px;text-align:center;cursor:pointer;transition:all .3s}
+.idb:hover,.idb.active{background:rgba(201,147,58,.18)}
+.idt{font-family:'Cinzel',serif;font-size:15px;font-weight:700;color:var(--bronze);letter-spacing:.08em}
+.ids{font-size:12px;color:var(--blanc2);margin-top:4px;font-style:italic}
+.pills{display:flex;justify-content:center;gap:8px;margin-top:10px;flex-wrap:wrap}
+.pill{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.1em;padding:3px 10px;border:1px solid var(--bronze2);color:var(--bronze2);text-transform:uppercase}
+.cv{display:flex;justify-content:center;padding:7px 0}
+.cl{width:1px;height:28px;background:linear-gradient(180deg,var(--bronze),var(--bronze3));position:relative}
+.cl::after{content:'';position:absolute;bottom:-5px;left:-4px;border-left:4px solid transparent;border-right:4px solid transparent;border-top:6px solid var(--bronze3)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+@media(max-width:600px){.g2,.g3,.dgr{grid-template-columns:1fr}.tabs{gap:2px}.tab{font-size:9px;padding:5px 10px}}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
+.stat{background:var(--gris);border:1px solid var(--gris2);border-top:2px solid var(--bronze3);padding:12px 14px;text-align:center;transition:all .2s}
+.stat:hover{border-top-color:var(--bronze)}
+.sv{font-family:'Cinzel',serif;font-size:24px;font-weight:700;color:var(--bronze);line-height:1}
+.sl{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.15em;color:var(--blanc2);text-transform:uppercase;margin-top:5px}
+@media(max-width:600px){.stats{grid-template-columns:repeat(2,1fr)}}
+.dbw{border:1px solid var(--gris2);border-radius:2px;overflow:hidden}
+.dbb{padding:10px 14px;background:var(--gris2);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.dbb input{background:var(--gris);border:1px solid var(--bronze3);color:var(--blanc);padding:6px 10px;font-size:13px;outline:none;flex:1;min-width:150px}
+.dbb input:focus{border-color:var(--bronze)}
+.fb{background:none;border:1px solid var(--gris2);color:var(--blanc2);padding:5px 10px;font-family:'Cinzel',serif;font-size:9px;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.fb:hover,.fb.active{border-color:var(--bronze);color:var(--bronze);background:rgba(201,147,58,.08)}
+.dbs{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12px;min-width:560px}
+thead th{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.12em;color:var(--bronze2);text-transform:uppercase;padding:9px 14px;background:#1A1A1A;border-bottom:1px solid var(--bronze3);text-align:left;white-space:nowrap}
+tbody tr{border-bottom:1px solid rgba(201,147,58,.08);transition:background .15s}
+tbody tr:hover{background:rgba(201,147,58,.05)}
+tbody td{padding:10px 14px;color:var(--blanc2);vertical-align:middle}
+tbody td:first-child{color:var(--blanc);font-family:'Cinzel',serif;font-size:11px}
+.pb{background:var(--gris2);height:3px;border-radius:2px;width:70px;display:inline-block;vertical-align:middle;margin-right:5px}
+.pbi{height:100%;background:var(--bronze);border-radius:2px}
+.rp{display:grid;grid-template-columns:110px 1fr;position:relative}
+.rp::before{content:'';position:absolute;left:109px;top:28px;bottom:0;width:1px;background:linear-gradient(180deg,var(--bronze2),var(--bronze3),transparent)}
+.rp:last-child::before{display:none}
+.rpl{padding:24px 16px 24px 0;text-align:right}
+.rpn{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.12em;color:var(--bronze);text-transform:uppercase;font-weight:600}
+.rpd{font-size:10px;color:var(--blanc2);font-style:italic;margin-top:3px}
+.rpc{padding:18px 0 18px 28px;border-left:1px solid var(--bronze3);display:flex;flex-direction:column;gap:8px}
+.ri{background:var(--gris);border:1px solid var(--gris2);border-left:2px solid var(--bronze3);padding:9px 12px;position:relative}
+.ri::before{content:'';position:absolute;left:-7px;top:50%;transform:translateY(-50%);width:8px;height:8px;border-radius:50%;background:var(--bronze3);border:2px solid var(--noir)}
+.ri:hover{border-left-color:var(--bronze);background:rgba(201,147,58,.06)}
+.ri:hover::before{background:var(--bronze)}
+.rin{font-family:'Cinzel',serif;font-size:11px;color:var(--blanc);margin-bottom:3px}
+.rid{font-size:11px;color:var(--blanc2);font-style:italic;line-height:1.4}
+.mc{background:var(--gris);border:1px solid var(--gris2);overflow:hidden;transition:all .25s;margin-bottom:14px}
+.mc:hover{border-color:var(--bronze2)}
+.mch{padding:12px 18px;background:#1A1A1A;border-bottom:1px solid var(--gris2);display:flex;justify-content:space-between;align-items:center}
+.mct{font-family:'Cinzel',serif;font-size:12px;font-weight:600;color:var(--bronze)}
+.mcr{font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:var(--bronze3)}
+.mcb{padding:14px 18px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:600px){.mcb{grid-template-columns:1fr}}
+.mk{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.15em;color:var(--bronze2);text-transform:uppercase;margin-bottom:3px}
+.mv{font-size:12px;color:var(--blanc);line-height:1.5}
+.mv.price{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:var(--bronze)}
+.qt{text-align:center;padding:28px 32px 18px}
+.qt::before{content:'';display:block;width:50px;height:1px;background:var(--bronze3);margin:0 auto 18px}
+.qtx{font-size:14px;font-style:italic;color:var(--bronze2);line-height:1.8}
+.qta{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.2em;color:var(--bronze3);text-transform:uppercase;margin-top:7px}
+.ftr{border-top:1px solid var(--gris2);padding:10px 24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.ft{font-family:'Cinzel',serif;font-size:8px;letter-spacing:.15em;color:var(--bronze3);text-transform:uppercase}
+.tc{display:none}.tc.active{display:block}
+</style>
 </head>
-<body style="background:#0D0D0D;color:#F5F0E8;font-family:Georgia,serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;">
-<div style="text-align:center;">
-  <h1 style="color:#C9933A;font-size:2rem;letter-spacing:.12em;">AURELIUS SECUNDUS</h1>
-  <p style="color:#A67C2E;font-style:italic;">Dashboard en cours de chargement...</p>
-  <p style="color:#C8C0B0;font-size:.9rem;">Architecture · Document de Commandement · 2026</p>
+<body>
+<div class="hdr">
+  <div><div class="lt">AURELIUS SECUNDUS</div><div class="ls">Architecture · Document de Commandement · 2026</div></div>
+  <div class="tabs">
+    <button class="tab active" onclick="sT('arch',this)">Ecosysteme</button>
+    <button class="tab" onclick="sT('db',this)">Base de donnees</button>
+    <button class="tab" onclick="sT('roadmap',this)">Roadmap</button>
+    <button class="tab" onclick="sT('monet',this)">Monetisation</button>
+  </div>
 </div>
+<div class="main">
+<div id="tab-arch" class="tc active">
+  <div class="st">Cartographie de l ecosysteme</div>
+  <div class="idb" onclick="tD('identity',this)">
+    <div class="idt">MACDUBH · AURELIUS SECUNDUS</div>
+    <div class="ids">@AigleRoyal28 · Philosophe stoicien · Createur de contenu</div>
+    <div class="pills"><span class="pill">L Aigle</span><span class="pill">Macdubh</span><span class="pill">Stoicisme</span></div>
+  </div>
+  <div id="detail-identity" class="det">
+    <div class="dtit">Morale de Ghost — Les 3 Piliers</div>
+    <div class="g3" style="margin-top:12px">
+      <div style="background:rgba(201,147,58,.06);border:1px solid var(--bronze3);padding:10px;text-align:center"><div style="font-family:Cinzel,serif;font-size:11px;font-weight:600;color:var(--bronze)">L Aigle</div><div style="font-size:10px;color:var(--blanc2);font-style:italic;margin-top:4px">Perspective elevee</div></div>
+      <div style="background:rgba(201,147,58,.06);border:1px solid var(--bronze3);padding:10px;text-align:center"><div style="font-family:Cinzel,serif;font-size:11px;font-weight:600;color:var(--bronze)">Macdubh</div><div style="font-size:10px;color:var(--blanc2);font-style:italic;margin-top:4px">Fils du noir</div></div>
+      <div style="background:rgba(201,147,58,.06);border:1px solid var(--bronze3);padding:10px;text-align:center"><div style="font-family:Cinzel,serif;font-size:11px;font-weight:600;color:var(--bronze)">Stoicisme</div><div style="font-size:10px;color:var(--blanc2);font-style:italic;margin-top:4px">Discipline interieure</div></div>
+    </div>
+  </div>
+  <div class="cv"><div class="cl"></div></div>
+  <div class="g2" style="margin-bottom:14px">
+    <div class="card" id="plat-aurelius" onclick="tD('aurelius',this)">
+      <div class="ch"><div class="cn">Aurelius Secundus</div><span class="bdg ba">Actif</span></div>
+      <div class="cu">macdubh28.github.io/marc-aurele/</div>
+      <ul class="items"><li>Meditations completes (12 livres)</li><li>Epictete · Seneque · Glossaire</li><li>Morale de Ghost (3 piliers + 6 Lois)</li><li>Algorithme de Vie · Citations</li><li>~/marc-aurele/ — GitHub Pages</li></ul>
+    </div>
+    <div class="card" id="plat-hegemonikon" onclick="tD('hegemonikon',this)">
+      <div class="ch"><div class="cn">HEGEMONIKON</div><span class="bdg ba">Actif · PWA</span></div>
+      <div class="cu">macdubh28.github.io/HEGEMONIKON/</div>
+      <ul class="items"><li>Journal stoicien mobile-first</li><li>5 pages : index, matin, journal, progres, archive</li><li>Streak 28 jours · Niveaux Novice-Sage</li><li>localStorage · Export JSON</li><li>~/hegemonikon/ · GHOST-2 · roger</li></ul>
+    </div>
+    <div class="card" id="plat-x" onclick="tD('x',this)">
+      <div class="ch"><div class="cn">@AigleRoyal28</div><span class="bdg ba">Actif</span></div>
+      <div class="cu">x.com/AigleRoyal28</div>
+      <ul class="items"><li>75% Stoicisme · 10% Geopolitique africaine</li><li>10% Fitness · 5% Tech/IA</li><li>Calendrier 30 jours · Threads viraux</li><li>Promo Gumroad · Voix : Aurelius Secundus</li></ul>
+    </div>
+    <div class="card" id="plat-gumroad" onclick="tD('gumroad',this)">
+      <div class="ch"><div class="cn">Gumroad Prompts Pack</div><span class="bdg bp">PRIORITE 1</span></div>
+      <div class="cu">gumroad.com · hegemonikon-prompts · 17 EUR</div>
+      <ul class="items"><li>25 prompts stoiciens · 6 categories</li><li>PDF noir/bronze · Cover 1280x720</li><li>Paiement Gumroad a configurer</li><li>Premier revenu de l ecosysteme</li></ul>
+    </div>
+  </div>
+  <div id="detail-aurelius" class="det"><div class="dtit">Aurelius Secundus — Detail</div><div class="dgr"><div><div class="dlb">Stack</div><div class="dv">HTML · CSS · JS · GitHub Pages</div></div><div><div class="dlb">Repo</div><div class="dv" style="font-family:monospace;font-size:11px">~/marc-aurele/</div></div><div><div class="dlb">Polices</div><div class="dv">Cinzel + Crimson Text + Montserrat</div></div><div><div class="dlb">Contrainte</div><div class="dv">Aucune ref a @ICF_243</div></div></div></div>
+  <div id="detail-hegemonikon" class="det"><div class="dtit">HEGEMONIKON — Detail</div><div class="dgr"><div><div class="dlb">Machine</div><div class="dv" style="font-family:monospace;font-size:11px">GHOST-2 · roger · ~/hegemonikon/</div></div><div><div class="dlb">Deploy</div><div class="dv" style="font-family:monospace;font-size:10px">heredoc /tmp python3 Downloads git push</div></div><div style="grid-column:1/-1"><div class="dlb">Issues</div><div class="tod"><div class="dot u"></div><span>Grec hegemonikon — Cinzel mappe Latin — PNG/SVG Pillow</span></div><div class="tod"><div class="dot h"></div><span>PWA complete (manifest + service worker)</span></div><div class="tod"><div class="dot h"></div><span>Interconnexion HEGEMONIKON — Aurelius Secundus</span></div></div></div></div>
+  <div id="detail-x" class="det"><div class="dtit">@AigleRoyal28 — Strategie</div><div class="dgr"><div><div class="dlb">Palette X</div><span class="dtg">#1A1A1A</span><span class="dtg">#F5F5F5</span><span class="dtg">#D4AF37</span></div><div><div class="dlb">Note</div><div class="dv">@ICF_243 reste separe de cet ecosysteme.</div></div></div></div>
+  <div id="detail-gumroad" class="det"><div class="dtit">Prompts Pack — 25 prompts · 6 categories</div><div class="dgr"><div><div class="dlb">Categories</div><span class="dtg">Rituel Matin</span><span class="dtg">Examen Soir</span><span class="dtg">Morale Ghost</span><span class="dtg">Reflexion</span><span class="dtg">Productivite</span><span class="dtg">Corps</span></div><div><div class="dlb">Urgent</div><div class="dv" style="color:#E85D24">Configurer paiement Gumroad</div></div></div></div>
+  <div class="g2">
+    <div class="card" onclick="tD('ghost',this)"><div class="ch"><div class="cn">Morale de Ghost</div><span class="bdg bd">Draft</span></div><div class="cu">Livre · Ebook Gumroad · 12-19 EUR</div><ul class="items"><li>Framework philosophique personnel</li><li>5 chapitres + intro + conclusion</li><li>Dossier local Mac</li></ul></div>
+    <div class="card" onclick="tD('icf',this)"><div class="ch"><div class="cn">@ICF_243</div><span class="bdg ba">Actif · Separe</span></div><div class="cu">x.com/ICF_243 · Congo-focus</div><ul class="items"><li>Contenu geopolitique africain</li><li>Totalement independant de l ecosysteme</li></ul></div>
+  </div>
+  <div id="detail-ghost" class="det"><div class="dtit">Morale de Ghost — Livre</div><div class="dgr"><div><div class="dlb">Structure</div><div class="dv">Introduction · 5 chapitres · Conclusion</div></div><div><div class="dlb">Next</div><div class="dv">Finalisation + PDF Gumroad 30-50 pages</div></div></div></div>
+  <div id="detail-icf" class="det"><div class="dtit">@ICF_243</div><div class="dv" style="padding:8px 0">Plateforme Congo-focused, separee. Aucune reference croisee.</div></div>
+</div>
+<div id="tab-db" class="tc">
+  <div class="st">Base de donnees</div>
+  <div class="stats"><div class="stat"><div class="sv">6</div><div class="sl">Projets</div></div><div class="stat"><div class="sv">4</div><div class="sl">Actifs</div></div><div class="stat"><div class="sv">17EUR</div><div class="sl">1er produit</div></div><div class="stat"><div class="sv">25</div><div class="sl">Prompts</div></div></div>
+  <div class="dbw"><div class="dbb"><input type="text" placeholder="Rechercher..." oninput="fDB(this.value)"><button class="fb active" onclick="fBS('all',this)">Tous</button><button class="fb" onclick="fBS('actif',this)">Actifs</button><button class="fb" onclick="fBS('cours',this)">En cours</button><button class="fb" onclick="fBS('draft',this)">Drafts</button></div><div class="dbs"><table><thead><tr><th>Projet</th><th>Statut</th><th>Priorite</th><th>Repo</th><th>Prog.</th><th>Next action</th></tr></thead><tbody id="dbt"></tbody></table></div></div>
+  <div style="margin-top:18px"><div class="st">Stack partage</div><div class="g3"><div class="card" style="cursor:default"><div class="cn" style="font-size:11px;margin-bottom:9px">Deploiement</div><ul class="items"><li>GitHub Pages (macdubh28)</li><li>Python heredoc base64</li><li>git push depuis Mac</li></ul></div><div class="card" style="cursor:default"><div class="cn" style="font-size:11px;margin-bottom:9px">Generation PDF</div><ul class="items"><li>fpdf2 · reportlab</li><li>pdf2image + poppler</li><li>Palette noir/bronze</li></ul></div><div class="card" style="cursor:default"><div class="cn" style="font-size:11px;margin-bottom:9px">Identite globale</div><ul class="items"><li>Noir #0D0D0D · Bronze #C9933A</li><li>Cinzel + Crimson Text</li><li>Mobile-first · PWA · Aigle</li></ul></div></div></div>
+</div>
+<div id="tab-roadmap" class="tc">
+  <div class="st">Roadmap 2026</div>
+  <div class="rp"><div class="rpl"><div class="rpn">Court terme</div><div class="rpd">1-4 semaines</div></div><div class="rpc"><div class="ri"><div class="rin">Configurer paiement Gumroad</div><div class="rid">Virement bancaire · Premier euro</div></div><div class="ri"><div class="rin">Thread de lancement @AigleRoyal28</div><div class="rid">Promouvoir le Prompts Pack</div></div><div class="ri"><div class="rin">Strategie promo X</div><div class="rid">Sequence de posts · Urgence</div></div></div></div>
+  <div class="rp"><div class="rpl"><div class="rpn">Moyen terme</div><div class="rpd">1-3 mois</div></div><div class="rpc"><div class="ri"><div class="rin">PWA HEGEMONIKON complete</div><div class="rid">manifest.json + service worker</div></div><div class="ri"><div class="rin">Interconnexion plateformes</div><div class="rid">Navigation croisee HEGEMONIKON — Aurelius Secundus</div></div><div class="ri"><div class="rin">Corriger rendu grec</div><div class="rid">PNG/SVG via Pillow + Times New Roman</div></div><div class="ri"><div class="rin">Ebook Morale de Ghost</div><div class="rid">PDF Gumroad · 12-19 EUR</div></div></div></div>
+  <div class="rp"><div class="rpl"><div class="rpn">Long terme</div><div class="rpd">3-6 mois</div></div><div class="rpc"><div class="ri"><div class="rin">HEGEMONIKON Premium</div><div class="rid">Sync cloud · Tier payant</div></div><div class="ri"><div class="rin">X Monetization @AigleRoyal28</div><div class="rid">Seuils X Premium · Abonnements</div></div><div class="ri"><div class="rin">Enrichir Aurelius Secundus</div><div class="rid">Nouvelles sections philosophiques</div></div><div class="ri"><div class="rin">Dashboard v2</div><div class="rid">Mise a jour de ce document</div></div></div></div>
+</div>
+<div id="tab-monet" class="tc">
+  <div class="st">Roadmap de monetisation</div>
+  <div class="mc"><div class="mch"><div class="mct">Prompts Pack Gumroad</div><div class="mcr">01</div></div><div class="mcb"><div><div class="mk">Statut</div><span class="bdg bp">PRIORITE 1</span></div><div><div class="mk">Prix</div><div class="mv price">17 EUR</div></div><div><div class="mk">Produit</div><div class="mv">25 prompts · 6 categories · PDF noir/bronze</div></div><div><div class="mk">Bloquant</div><div class="mv" style="color:#E85D24">Paiement Gumroad a configurer</div></div></div></div>
+  <div class="mc"><div class="mch"><div class="mct">Morale de Ghost — Ebook</div><div class="mcr">02</div></div><div class="mcb"><div><div class="mk">Statut</div><span class="bdg bd">Draft</span></div><div><div class="mk">Prix</div><div class="mv price">12-19 EUR</div></div><div><div class="mk">Contenu</div><div class="mv">30-50 pages · 3 piliers · 5 chapitres</div></div><div><div class="mk">Next</div><div class="mv">Finaliser + Gumroad + promo X</div></div></div></div>
+  <div class="mc"><div class="mch"><div class="mct">X Monetization @AigleRoyal28</div><div class="mcr">03</div></div><div class="mcb"><div><div class="mk">Statut</div><span class="bdg bc">En construction</span></div><div><div class="mk">Modele</div><div class="mv">Abonnements · Tips · Promo</div></div><div><div class="mk">Contenu</div><div class="mv">75% Stoicisme · Calendrier 30j</div></div><div><div class="mk">Objectif</div><div class="mv">Seuils X Premium</div></div></div></div>
+  <div class="mc"><div class="mch"><div class="mct">HEGEMONIKON Premium</div><div class="mcr">04</div></div><div class="mcb"><div><div class="mk">Statut</div><span class="bdg bd">Long terme</span></div><div><div class="mk">Concept</div><div class="mv">PWA premium · Sync cloud</div></div><div><div class="mk">Potentiel</div><div class="mv">Abonnement mensuel · Recurrent</div></div><div><div class="mk">Prerequis</div><div class="mv">PWA complete + base utilisateurs</div></div></div></div>
+</div>
+</div>
+<div class="qt"><div class="qtx">"Tu as du pouvoir sur ton esprit, pas sur les evenements exterieurs."</div><div class="qta">Marc Aurele · Pensees</div></div>
+<div class="ftr"><div class="ft">Macdubh · Aurelius Secundus · @AigleRoyal28</div><div class="ft">Document de Commandement · Mars 2026</div><div class="ft">Dashboard V2</div></div>
+<script>
+const DB=[
+  {n:'Aurelius Secundus',s:'Actif',sb:'ba',p:'Maintenance',pb:'bc',r:'~/marc-aurele/',g:85,nx:'Interconnexion + enrichissement'},
+  {n:'HEGEMONIKON',s:'Actif',sb:'ba',p:'PWA + interconnexion',pb:'bc',r:'~/hegemonikon/ GHOST-2',g:70,nx:'PWA + grec + navigation croisee'},
+  {n:'Prompts Pack Gumroad',s:'En cours',sb:'bc',p:'PRIORITE 1',pb:'bp',r:'gumroad hegemonikon-prompts',g:80,nx:'Configurer paiement Gumroad'},
+  {n:'@AigleRoyal28',s:'Actif',sb:'ba',p:'Monetisation X',pb:'bc',r:'x.com/AigleRoyal28',g:60,nx:'Thread lancement Croissance'},
+  {n:'Morale de Ghost',s:'Draft',sb:'bd',p:'Ebook Gumroad',pb:'bd',r:'Dossier local Mac',g:40,nx:'Finaliser publier Gumroad'},
+  {n:'@ICF_243',s:'Actif Separe',sb:'ba',p:'Independant',pb:'bd',r:'x.com/ICF_243',g:50,nx:'Hors ecosysteme stoicien'}
+];
+let cf='all',cs='';
+function rDB(d){const b=document.getElementById('dbt');b.innerHTML='';d.forEach(r=>{const tr=document.createElement('tr');tr.innerHTML='<td>'+r.n+'</td><td><span class="bdg '+r.sb+'">'+r.s+'</span></td><td><span class="bdg '+r.pb+'">'+r.p+'</span></td><td style="font-family:monospace;font-size:10px;color:var(--bronze2)">'+r.r+'</td><td><div style="display:flex;align-items:center;gap:5px"><div class="pb"><div class="pbi" style="width:'+r.g+'%"></div></div><span style="font-size:10px;color:var(--blanc2)">'+r.g+'%</span></div></td><td style="font-size:11px;font-style:italic">'+r.nx+'</td>';b.appendChild(tr);});}
+function fDB(s){cs=s.toLowerCase();apF();}
+function fBS(s,btn){cf=s;document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));btn.classList.add('active');apF();}
+function apF(){let d=DB;if(cf!=='all')d=d.filter(r=>r.s.toLowerCase().includes(cf)||r.p.toLowerCase().includes(cf));if(cs)d=d.filter(r=>r.n.toLowerCase().includes(cs)||r.s.toLowerCase().includes(cs)||r.r.toLowerCase().includes(cs)||r.nx.toLowerCase().includes(cs));rDB(d);}
+function sT(t,btn){document.querySelectorAll('.tc').forEach(x=>x.classList.remove('active'));document.getElementById('tab-'+t).classList.add('active');document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+function tD(id,srcEl){const el=document.getElementById('detail-'+id);if(!el)return;const vis=el.classList.contains('visible');document.querySelectorAll('.det').forEach(d=>d.classList.remove('visible'));document.querySelectorAll('.card,.idb').forEach(p=>p.classList.remove('active'));if(!vis){el.classList.add('visible');if(srcEl)srcEl.classList.add('active');}}
+rDB(DB);
+</script>
 </body>
 </html>
