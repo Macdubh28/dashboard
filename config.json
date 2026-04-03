@@ -1,20 +1,20 @@
 {
-  "version": "1.2.0",
-  "lastUpdated": "2026-03-28",
+  "version": "1.3.0",
+  "lastUpdated": "2026-04-04",
   "author": "Aurelius Secundus",
   "handle": "@AigleRoyal28",
   "global": {
-    "quoteOfDay": {
-      "text": "Tu as du pouvoir sur ton esprit, pas sur les événements extérieurs. Prends-en conscience et tu trouveras la force.",
-      "author": "Marc Aurèle",
-      "source": "Pensées"
-    },
     "philosophy": "Morale de Ghost",
     "pillars": [
       "L'Aigle",
       "Macdubh",
       "Stoïcisme"
-    ]
+    ],
+    "citationDuJour": {
+      "text": "Tu as du pouvoir sur ton esprit, pas sur les événements extérieurs. Prends-en conscience et tu trouveras la force.",
+      "author": "Marc Aurèle",
+      "source": "Pensées"
+    }
   },
   "platforms": {
     "hegemonikon": {
@@ -48,7 +48,17 @@
         }
       ],
       "color": "#C9A84C",
-      "icon": "🏛️"
+      "icon": "🏛️",
+      "citation": {
+        "text": "Ce n'est pas ce qui t'arrive qui te fait souffrir, mais l'idee que tu t'en fais.",
+        "author": "Epictete",
+        "source": "Manuel"
+      },
+      "objectifDuJour": {
+        "texte": "Pratiquer la memento mori : contempler la finitude pour agir avec urgence.",
+        "categorie": "Discipline",
+        "icone": "⚡"
+      }
     },
     "marc-aurele": {
       "title": "Aurelius Secundus",
@@ -85,7 +95,17 @@
         }
       ],
       "color": "#8B6914",
-      "icon": "📜"
+      "icon": "📜",
+      "citation": {
+        "text": "Agis comme si chaque moment de ta vie etait le dernier.",
+        "author": "Marc Aurele",
+        "source": "Pensees, II.5"
+      },
+      "objectifDuJour": {
+        "texte": "Etudier une citation stoicienne et l'appliquer a une situation concrete de la journee.",
+        "categorie": "Philosophie",
+        "icone": "📖"
+      }
     },
     "dashboard": {
       "title": "GHOST-2 Dashboard",
@@ -105,8 +125,8 @@
       "icon": "⚡"
     }
   },
-    "citation": {
-        "text": "Tu as du pouvoir sur ton esprit, pas sur les evenements. Realise cela, et tu trouveras la force.",
-            "author": "Marc Aurele, Pensees"
-              }
+  "citation": {
+    "text": "Tu as du pouvoir sur ton esprit, pas sur les evenements. Realise cela, et tu trouveras la force.",
+    "author": "Marc Aurele, Pensees"
+  }
 }
