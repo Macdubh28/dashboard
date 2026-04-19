@@ -155,6 +155,49 @@
         "icone": "◼"
       }
     },
+    "obscuro": {
+      "title": "OBSCURO",
+      "tagline": "Sang-froid et maîtrise de soi — Voie du Fils du Noir",
+      "url": "https://macdubh28.github.io/OBSCURO/",
+      "repo": "https://github.com/Macdubh28/OBSCURO",
+      "status": "active",
+      "maintenanceMode": false,
+      "maintenanceMessage": "",
+      "nav": [
+        {
+          "label": "Accueil",
+          "href": "index.html"
+        },
+        {
+          "label": "Protocoles",
+          "href": "protocoles.html"
+        },
+        {
+          "label": "Techniques",
+          "href": "techniques.html"
+        },
+        {
+          "label": "Citations",
+          "href": "citations.html"
+        },
+        {
+          "label": "Journal",
+          "href": "journal.html"
+        }
+      ],
+      "color": "#5b8fd4",
+      "icon": "🦅",
+      "citation": {
+        "text": "Le sage ne se trouble pas : il observe, il pèse, il agit.",
+        "author": "Sénèque",
+        "source": "De Ira"
+      },
+      "objectifDuJour": {
+        "texte": "Pratiquer la réaction différée : face à un déclencheur, attendre 10 secondes avant toute parole.",
+        "categorie": "Maîtrise",
+        "icone": "◆"
+      }
+    },
     "dashboard": {
       "title": "GHOST-2 Dashboard",
       "tagline": "Hub de Commandement — Aurelius Secundus",

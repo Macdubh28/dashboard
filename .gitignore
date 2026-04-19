@@ -1,0 +1,9 @@
+# Backups locaux
+*.bak
+
+# Scripts d'édition jetables
+add_*.py
+update_*.py
+
+# macOS
+.DS_Store
