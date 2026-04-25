@@ -1,6 +1,6 @@
 {
-  "version": "1.4.1",
-  "lastUpdated": "2026-04-19",
+  "version": "1.4.3",
+  "lastUpdated": "2026-04-25",
   "author": "Aurelius Secundus",
   "handle": "@AigleRoyal28",
   "global": {
@@ -11,11 +11,6 @@
       "Stoïcisme"
     ],
     "citationDuJour": {
-      "text": "Tu as du pouvoir sur ton esprit, pas sur les événements extérieurs. Prends-en conscience et tu trouveras la force.",
-      "author": "Marc Aurèle",
-      "source": "Pensées"
-    },
-    "quoteOfDay": {
       "text": "Tu as du pouvoir sur ton esprit, pas sur les événements extérieurs. Prends-en conscience et tu trouveras la force.",
       "author": "Marc Aurèle",
       "source": "Pensées"
@@ -31,26 +26,11 @@
       "maintenanceMode": false,
       "maintenanceMessage": "",
       "nav": [
-        {
-          "label": "Accueil",
-          "href": "index.html"
-        },
-        {
-          "label": "Matin",
-          "href": "matin.html"
-        },
-        {
-          "label": "Journal",
-          "href": "journal.html"
-        },
-        {
-          "label": "Progrès",
-          "href": "progres.html"
-        },
-        {
-          "label": "Archive",
-          "href": "archive.html"
-        }
+        { "label": "Accueil",  "href": "index.html"   },
+        { "label": "Matin",    "href": "matin.html"   },
+        { "label": "Journal",  "href": "journal.html" },
+        { "label": "Progrès",  "href": "progres.html" },
+        { "label": "Archive",  "href": "archive.html" }
       ],
       "color": "#C9A84C",
       "icon": "🏛️",
@@ -74,30 +54,12 @@
       "maintenanceMode": false,
       "maintenanceMessage": "",
       "nav": [
-        {
-          "label": "Accueil",
-          "href": "index.html"
-        },
-        {
-          "label": "Marc Aurèle",
-          "href": "marc-aurele.html"
-        },
-        {
-          "label": "Épictète",
-          "href": "epictete.html"
-        },
-        {
-          "label": "Sénèque",
-          "href": "seneque.html"
-        },
-        {
-          "label": "Exercices",
-          "href": "exercices.html"
-        },
-        {
-          "label": "Morale de Ghost",
-          "href": "morale-ghost.html"
-        }
+        { "label": "Accueil",         "href": "index.html"        },
+        { "label": "Marc Aurèle",     "href": "marc-aurele.html"  },
+        { "label": "Épictète",        "href": "epictete.html"     },
+        { "label": "Sénèque",         "href": "seneque.html"      },
+        { "label": "Exercices",       "href": "exercices.html"    },
+        { "label": "Morale de Ghost", "href": "morale-ghost.html" }
       ],
       "color": "#8B6914",
       "icon": "📜",
@@ -121,26 +83,11 @@
       "maintenanceMode": false,
       "maintenanceMessage": "",
       "nav": [
-        {
-          "label": "Accueil",
-          "href": "index.html"
-        },
-        {
-          "label": "Errol Holden",
-          "href": "holden.html"
-        },
-        {
-          "label": "Roc Marciano",
-          "href": "marciano.html"
-        },
-        {
-          "label": "Ka †",
-          "href": "ka.html"
-        },
-        {
-          "label": "Styles P",
-          "href": "stylesp.html"
-        }
+        { "label": "Accueil",       "href": "index.html"    },
+        { "label": "Errol Holden",  "href": "holden.html"   },
+        { "label": "Roc Marciano",  "href": "marciano.html" },
+        { "label": "Ka †",          "href": "ka.html"       },
+        { "label": "Styles P",      "href": "stylesp.html"  }
       ],
       "color": "#8b1a1a",
       "icon": "🔥",
@@ -164,26 +111,12 @@
       "maintenanceMode": false,
       "maintenanceMessage": "",
       "nav": [
-        {
-          "label": "Accueil",
-          "href": "index.html"
-        },
-        {
-          "label": "Protocoles",
-          "href": "protocoles.html"
-        },
-        {
-          "label": "Techniques",
-          "href": "techniques.html"
-        },
-        {
-          "label": "Citations",
-          "href": "citations.html"
-        },
-        {
-          "label": "Journal",
-          "href": "journal.html"
-        }
+        { "label": "Accueil",    "href": "index.html"      },
+        { "label": "Protocoles", "href": "protocoles.html" },
+        { "label": "Techniques", "href": "techniques.html" },
+        { "label": "Citations",  "href": "citations.html"  },
+        { "label": "Journal",    "href": "journal.html"    },
+        { "label": "Outils",     "href": "outils.html"     }
       ],
       "color": "#5b8fd4",
       "icon": "🦅",
@@ -207,10 +140,7 @@
       "maintenanceMode": false,
       "maintenanceMessage": "",
       "nav": [
-        {
-          "label": "Hub",
-          "href": "index.html"
-        }
+        { "label": "Hub", "href": "index.html" }
       ],
       "color": "#F5F0E8",
       "icon": "⚡"
