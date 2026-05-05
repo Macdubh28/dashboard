@@ -1,6 +1,6 @@
 {
   "version": "1.4.3",
-  "lastUpdated": "2026-04-25",
+  "lastUpdated": "2026-05-05",
   "author": "Aurelius Secundus",
   "handle": "@AigleRoyal28",
   "global": {
@@ -26,11 +26,26 @@
       "maintenanceMode": false,
       "maintenanceMessage": "",
       "nav": [
-        { "label": "Accueil",  "href": "index.html"   },
-        { "label": "Matin",    "href": "matin.html"   },
-        { "label": "Journal",  "href": "journal.html" },
-        { "label": "Progrès",  "href": "progres.html" },
-        { "label": "Archive",  "href": "archive.html" }
+        {
+          "label": "Accueil",
+          "href": "index.html"
+        },
+        {
+          "label": "Matin",
+          "href": "matin.html"
+        },
+        {
+          "label": "Journal",
+          "href": "journal.html"
+        },
+        {
+          "label": "Progrès",
+          "href": "progres.html"
+        },
+        {
+          "label": "Archive",
+          "href": "archive.html"
+        }
       ],
       "color": "#C9A84C",
       "icon": "🏛️",
@@ -54,12 +69,30 @@
       "maintenanceMode": false,
       "maintenanceMessage": "",
       "nav": [
-        { "label": "Accueil",         "href": "index.html"        },
-        { "label": "Marc Aurèle",     "href": "marc-aurele.html"  },
-        { "label": "Épictète",        "href": "epictete.html"     },
-        { "label": "Sénèque",         "href": "seneque.html"      },
-        { "label": "Exercices",       "href": "exercices.html"    },
-        { "label": "Morale de Ghost", "href": "morale-ghost.html" }
+        {
+          "label": "Accueil",
+          "href": "index.html"
+        },
+        {
+          "label": "Marc Aurèle",
+          "href": "marc-aurele.html"
+        },
+        {
+          "label": "Épictète",
+          "href": "epictete.html"
+        },
+        {
+          "label": "Sénèque",
+          "href": "seneque.html"
+        },
+        {
+          "label": "Exercices",
+          "href": "exercices.html"
+        },
+        {
+          "label": "Morale de Ghost",
+          "href": "morale-ghost.html"
+        }
       ],
       "color": "#8B6914",
       "icon": "📜",
@@ -83,11 +116,26 @@
       "maintenanceMode": false,
       "maintenanceMessage": "",
       "nav": [
-        { "label": "Accueil",       "href": "index.html"    },
-        { "label": "Errol Holden",  "href": "holden.html"   },
-        { "label": "Roc Marciano",  "href": "marciano.html" },
-        { "label": "Ka †",          "href": "ka.html"       },
-        { "label": "Styles P",      "href": "stylesp.html"  }
+        {
+          "label": "Accueil",
+          "href": "index.html"
+        },
+        {
+          "label": "Errol Holden",
+          "href": "holden.html"
+        },
+        {
+          "label": "Roc Marciano",
+          "href": "marciano.html"
+        },
+        {
+          "label": "Ka †",
+          "href": "ka.html"
+        },
+        {
+          "label": "Styles P",
+          "href": "stylesp.html"
+        }
       ],
       "color": "#8b1a1a",
       "icon": "🔥",
@@ -111,12 +159,30 @@
       "maintenanceMode": false,
       "maintenanceMessage": "",
       "nav": [
-        { "label": "Accueil",    "href": "index.html"      },
-        { "label": "Protocoles", "href": "protocoles.html" },
-        { "label": "Techniques", "href": "techniques.html" },
-        { "label": "Citations",  "href": "citations.html"  },
-        { "label": "Journal",    "href": "journal.html"    },
-        { "label": "Outils",     "href": "outils.html"     }
+        {
+          "label": "Accueil",
+          "href": "index.html"
+        },
+        {
+          "label": "Protocoles",
+          "href": "protocoles.html"
+        },
+        {
+          "label": "Techniques",
+          "href": "techniques.html"
+        },
+        {
+          "label": "Citations",
+          "href": "citations.html"
+        },
+        {
+          "label": "Journal",
+          "href": "journal.html"
+        },
+        {
+          "label": "Outils",
+          "href": "outils.html"
+        }
       ],
       "color": "#5b8fd4",
       "icon": "🦅",
@@ -131,6 +197,49 @@
         "icone": "◆"
       }
     },
+    "morale-de-ghost": {
+      "title": "MORALE DE GHOST",
+      "tagline": "La doctrine fondatrice — Forgée dans l'ombre, tenue dans la lumière",
+      "url": "https://macdubh28.github.io/morale-de-ghost/",
+      "repo": "https://github.com/Macdubh28/morale-de-ghost",
+      "status": "active",
+      "maintenanceMode": false,
+      "maintenanceMessage": "",
+      "nav": [
+        {
+          "label": "Doctrine",
+          "href": "index.html"
+        },
+        {
+          "label": "Les Lois",
+          "href": "lois.html"
+        },
+        {
+          "label": "Politique",
+          "href": "politique.html"
+        },
+        {
+          "label": "Exercices",
+          "href": "exercices.html"
+        },
+        {
+          "label": "Logos",
+          "href": "logos.html"
+        }
+      ],
+      "color": "#6B3FA0",
+      "icon": "👁️",
+      "citation": {
+        "text": "Le Ghost agit. Il n'annonce pas.",
+        "author": "Morale de Ghost",
+        "source": "Loi I"
+      },
+      "objectifDuJour": {
+        "texte": "Appliquer une des 6 Lois Fondamentales à une décision concrète de la journée.",
+        "categorie": "Doctrine",
+        "icone": "◈"
+      }
+    },
     "dashboard": {
       "title": "GHOST-2 Dashboard",
       "tagline": "Hub de Commandement — Aurelius Secundus",
@@ -140,7 +249,10 @@
       "maintenanceMode": false,
       "maintenanceMessage": "",
       "nav": [
-        { "label": "Hub", "href": "index.html" }
+        {
+          "label": "Hub",
+          "href": "index.html"
+        }
       ],
       "color": "#F5F0E8",
       "icon": "⚡"
