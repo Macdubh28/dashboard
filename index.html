@@ -189,10 +189,10 @@
       }
     }
     function getFallbackConfig(){
-      return{version:"1.2.0",lastUpdated:new Date().toISOString().split('T')[0],author:"Aurelius Secundus",handle:"@AigleRoyal28",global:{quoteOfDay:{text:"Tu as du pouvoir sur ton esprit, pas sur les événements extérieurs.",author:"Marc Aurèle",source:"Pensées"}},platforms:{hegemonikon:{title:"HEGEMONIKON",tagline:"La Citadelle Intérieure — Discipline Stoïcienne",url:"https://macdubh28.github.io/HEGEMONIKON/",repo:"https://github.com/Macdubh28/hegemonikon",status:"active",maintenanceMode:false,maintenanceMessage:"",color:"#C9A84C",icon:"🏛️"},"marc-aurele":{title:"Aurelius Secundus",tagline:"La voie du philosophe-guerrier",url:"https://macdubh28.github.io/marc-aurele/",repo:"https://github.com/Macdubh28/marc-aurele",status:"active",maintenanceMode:false,maintenanceMessage:"",color:"#8B6914",icon:"📜"},dashboard:{title:"GHOST-2 Dashboard",tagline:"Hub de Commandement",url:"https://macdubh28.github.io/dashboard/",repo:"https://github.com/Macdubh28/dashboard",status:"active",maintenanceMode:false,maintenanceMessage:"",color:"#F5F0E8",icon:"⚡"}}};
+      return{version:"1.2.0",lastUpdated:new Date().toISOString().split('T')[0],author:"Aurelius Secundus",handle:"@AigleRoyal28",global:{citationDuJour:{text:"Tu as du pouvoir sur ton esprit, pas sur les événements extérieurs.",author:"Marc Aurèle",source:"Pensées"}},platforms:{hegemonikon:{title:"HEGEMONIKON",tagline:"La Citadelle Intérieure — Discipline Stoïcienne",url:"https://macdubh28.github.io/HEGEMONIKON/",repo:"https://github.com/Macdubh28/hegemonikon",status:"active",maintenanceMode:false,maintenanceMessage:"",color:"#C9A84C",icon:"🏛️"},"marc-aurele":{title:"Aurelius Secundus",tagline:"La voie du philosophe-guerrier",url:"https://macdubh28.github.io/marc-aurele/",repo:"https://github.com/Macdubh28/marc-aurele",status:"active",maintenanceMode:false,maintenanceMessage:"",color:"#8B6914",icon:"📜"},dashboard:{title:"GHOST-2 Dashboard",tagline:"Hub de Commandement",url:"https://macdubh28.github.io/dashboard/",repo:"https://github.com/Macdubh28/dashboard",status:"active",maintenanceMode:false,maintenanceMessage:"",color:"#F5F0E8",icon:"⚡"}}};
     }
     function renderQuote(){
-      const q=config.global.quoteOfDay;
+      const q=config.global.citationDuJour||config.global.citationDuJour;
       document.getElementById('quote-text').textContent=q.text;
       document.getElementById('quote-author').textContent='— '+q.author+(q.source?', '+q.source:'');
     }
@@ -204,7 +204,7 @@
       });
     }
     function populateEditors(){
-      const q=config.global.quoteOfDay;
+      const q=config.global.citationDuJour||config.global.citationDuJour;
       document.getElementById('edit-quote-text').value=q.text;
       document.getElementById('edit-quote-author').value=q.author;
       document.getElementById('edit-quote-source').value=q.source||'';
@@ -224,9 +224,9 @@
       updateMaintenanceLabel('marc');
     }
     function saveQuote(){
-      config.global.quoteOfDay.text=document.getElementById('edit-quote-text').value.trim();
-      config.global.quoteOfDay.author=document.getElementById('edit-quote-author').value.trim();
-      config.global.quoteOfDay.source=document.getElementById('edit-quote-source').value.trim();
+      (config.global.citationDuJour||config.global.citationDuJour).text=document.getElementById('edit-quote-text').value.trim();
+      (config.global.citationDuJour||config.global.citationDuJour).author=document.getElementById('edit-quote-author').value.trim();
+      (config.global.citationDuJour||config.global.citationDuJour).source=document.getElementById('edit-quote-source').value.trim();
       config.lastUpdated=new Date().toISOString().split('T')[0];
       renderQuote();renderJSON();flash('msg-quote');
     }
